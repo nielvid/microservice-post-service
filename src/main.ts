@@ -8,12 +8,12 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: process.env.TCP_HOST,
+      port: process.env.TCP_PORT,
     },
   });
   // const app = await NestFactory.create(AppModule);
 
-  const port = process.env.PORT || 5000;
   await app.listen();
-  Logger.log('info', `Server running on Port ${port}`);
+  Logger.log('info', `Server running`);
 }
 bootstrap();
